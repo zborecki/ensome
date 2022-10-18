@@ -22,6 +22,7 @@
   },
   "include": [
     "src",
-    "defaultTheme.d.ts"
+    "defaultTheme.d.ts",
+    "assets.d.ts"
   ]
 }
