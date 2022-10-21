@@ -1,23 +1,31 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import Header from '../components/Header';
-import { Container } from '../styled.components';
+import { MainContainer } from '../styled.components';
 
 const Layout = (): JSX.Element => {
-  const [headerHeight, setHeaderHeight] = useState<string>();
+  const [scrollY, setScrollY] = useState(0);
+
+  const handleScrollY = () => setScrollY(window.scrollY);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScrollY, { passive: true });
+
+    return () => window.removeEventListener('scroll', handleScrollY);
+  }, []);
 
   return (
     <>
       <Header
         className="header"
-        height={(height: string) => setHeaderHeight(height)}
+        scrollY={scrollY}
       />
-      <Container
-        style={{ paddingTop: headerHeight }}
+      <MainContainer
         as="main"
+        scrollY={scrollY}
       >
         <Outlet />
-      </Container>
+      </MainContainer>
       <footer>footer</footer>
     </>
   );

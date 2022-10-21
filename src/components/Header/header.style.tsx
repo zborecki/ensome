@@ -20,11 +20,14 @@ export const HeaderContainer = styled(Container)`
   justify-content: space-between;
 `;
 
-export const HeaderWrapper = styled.header`
+export const HeaderWrapper = styled.header<{
+  scrollY: number;
+}>`
   position: fixed;
   width: 100%;
-  padding: 40px;
-  background: #ffffff; // NOTE: temporary attribute
+  padding: ${({ scrollY }) => (scrollY > 0 ? '20px 0px 20px 0px' : '40px 0px 40px 0px')};
+  transition: padding 0.4s;
+  background: #db6565; // NOTE: temporary attribute
 `;
 
 export const NavigationLink = styled(NavLink)`

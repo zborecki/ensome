@@ -12,3 +12,10 @@ export const ImageContainer = styled.div<{
   max-width: ${({ width }) => width};
   max-height: ${({ height }) => height};
 `;
+
+export const MainContainer = styled(Container)<{
+  scrollY: number;
+}>`
+  padding-top: ${({ scrollY }) => (scrollY > 0 ? '46px' : '126px')};
+  transition: padding-top 0.4s;
+`;
