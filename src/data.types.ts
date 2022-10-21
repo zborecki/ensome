@@ -3,7 +3,7 @@ export interface BaseProps {
 }
 
 export interface HeaderProps extends BaseProps {
-  height: (height: string) => void;
+  scrollY: number;
 }
 
 export interface INavigation {

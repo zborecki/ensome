@@ -1,5 +1,4 @@
 import { Button } from '@mui/material';
-import { useLayoutEffect, useRef } from 'react';
 import { HeaderProps, INavigation } from '../../data.types';
 import Logo from '../Logo';
 import {
@@ -25,25 +24,18 @@ const navigationItems: INavigation[] = [
   }
 ];
 
-const Header = ({ className, height }: HeaderProps): JSX.Element => {
-  const headerRef = useRef<HTMLHeadingElement>(null);
-
-  useLayoutEffect(() => {
-    height(`${headerRef.current?.offsetHeight}px`);
-  }, [headerRef.current?.offsetHeight]);
-
-  return (
-    <HeaderWrapper
-      className={className}
-      ref={headerRef}
+const Header = ({ className, scrollY }: HeaderProps): JSX.Element => (
+  <HeaderWrapper
+    className={className}
+    scrollY={scrollY}
+  >
+    <HeaderContainer
+      className={`${className}__container`}
     >
-      <HeaderContainer
-        className={`${className}__container`}
-      >
-        <Logo className={className} />
-        <nav className={`${className}__navigation`}>
-          <NavigationList className="navigation__list">
-            {
+      <Logo className={className} />
+      <nav className={`${className}__navigation`}>
+        <NavigationList className="navigation__list">
+          {
             navigationItems.map(({ label, link }) => (
               <li
                 key={label}
@@ -59,14 +51,13 @@ const Header = ({ className, height }: HeaderProps): JSX.Element => {
               </li>
             ))
           }
-          </NavigationList>
-        </nav>
+        </NavigationList>
+      </nav>
 
-        { /* TODO: Set a style for buttons */ }
-        <Button className={`${className}__button`}>Button</Button>
-      </HeaderContainer>
-    </HeaderWrapper>
-  );
-};
+      { /* TODO: Set a style for buttons */ }
+      <Button className={`${className}__button`}>Button</Button>
+    </HeaderContainer>
+  </HeaderWrapper>
+);
 
 export default Header;
