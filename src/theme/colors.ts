@@ -8,5 +8,7 @@ export default {
   black: '#292D33',
   grey: '#9497A1',
   red: '#C14040',
-  background: '#F1F6FA'
+  blueberry: '#467DFF',
+  background: '#F1F6FA',
+  white: '#FFFFFF'
 };

@@ -27,7 +27,7 @@ export const HeaderWrapper = styled.header<{
   width: 100%;
   padding: ${({ scrollY }) => (scrollY > 0 ? '20px 0px 20px 0px' : '40px 0px 40px 0px')};
   transition: padding 0.4s;
-  background: #db6565; // NOTE: temporary attribute
+  background: ${({ theme: { header } }) => header.background}
 `;
 
 export const NavigationLink = styled(NavLink)`
