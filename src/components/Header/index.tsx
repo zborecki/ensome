@@ -1,5 +1,6 @@
-import { Button } from '@mui/material';
+import { Icon } from '@iconify/react';
 import { HeaderProps, INavigation } from '../../data.types';
+import { Button } from '../../styled.components';
 import Logo from '../Logo';
 import {
   HeaderContainer, HeaderWrapper, NavigationLink, NavigationList
@@ -53,9 +54,20 @@ const Header = ({ className, scrollY }: HeaderProps): JSX.Element => (
           }
         </NavigationList>
       </nav>
-
-      { /* TODO: Set a style for buttons */ }
-      <Button className={`${className}__button`}>Button</Button>
+      <Button
+        className={`${className}__button`}
+        variant="contained"
+        size="small"
+        startIcon={(
+          <Icon
+            icon="fluent:play-circle-24-regular"
+            width="24"
+            height="24"
+          />
+        )}
+      >
+        Watch the demo
+      </Button>
     </HeaderContainer>
   </HeaderWrapper>
 );
