@@ -1,5 +1,7 @@
+import Welcome from '../components/Welcome';
+
 const Home = (): JSX.Element => (
-  <div style={{ background: 'yellow', height: '2000px' }}>Home</div>
+  <Welcome />
 );
 
 export default Home;

@@ -21,6 +21,11 @@ export interface INavigation {
   link: string;
 }
 
+export interface InformationProps {
+  headline: string;
+  children: string;
+}
+
 export interface ITypography {
   fontWeight: IFontWeight;
   fontSize: string;

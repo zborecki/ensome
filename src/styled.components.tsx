@@ -48,6 +48,10 @@ export const Container = styled.div`
   margin: 0 auto;
 `;
 
+export const Headline = styled.span`
+  
+`;
+
 export const ImageContainer = styled.div<{
   width: string;
   height: string;
