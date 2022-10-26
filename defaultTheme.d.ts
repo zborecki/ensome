@@ -1,5 +1,5 @@
 import 'styled-components';
-import { ButtonStatesType, ITypography } from './src/data.types';
+import { ButtonStates } from './src/types/button';
 
 declare module 'styled-components' {
   export interface DefaultTheme {
@@ -15,12 +15,13 @@ declare module 'styled-components' {
     button: {
       background: {
         contained: {
-          states: ButtonStatesType,
+          states: ButtonStates,
+          color: string
+        },
+        outlined: {
+          states: ButtonStates,
           color: string
         }
-      },
-      small: {
-        font: ITypography
       }
     }
   }

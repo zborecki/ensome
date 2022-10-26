@@ -16,6 +16,7 @@ const queryClient = new QueryClient();
 root.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
+      { /* TODO: Change a theme provider - created by Material UI */ }
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <App />

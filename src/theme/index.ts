@@ -22,6 +22,15 @@ export default {
           pressed: colors.primary,
           disabled: colors.grey
         }
+      },
+      outlined: {
+        color: colors.black,
+        states: {
+          enabled: colors.black,
+          hovered: colors.primary,
+          pressed: colors.primary,
+          disabled: colors.grey
+        }
       }
     },
     small: {

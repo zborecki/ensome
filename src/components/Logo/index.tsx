@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ImageContainer } from '../../styled.components';
 import logo from '../../assets/logo.png';
-import { BaseProps } from '../../data.types';
+import { BaseProps } from '../../types/props';
 
 const Logo = ({ className }: BaseProps): JSX.Element => (
   <Link
