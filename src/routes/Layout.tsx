@@ -23,6 +23,7 @@ const Layout = (): JSX.Element => {
       <MainContainer
         as="main"
         scrollY={scrollY}
+        className="main"
       >
         <Outlet />
       </MainContainer>
